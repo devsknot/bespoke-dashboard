@@ -29,7 +29,7 @@ const Page404 = ({ params: { locale } }: { params: { locale: string } }) => {
             Page not found
           </h4>
           <p className="font-normal text-base text-default-500 ">
-            The page you are looking for doesn't exist or has been moved. <br />
+            The page you are looking for doesn&apos;t exist or has been moved. <br />
             Please go back to the home page.
           </p>
           <div className="mt-4">

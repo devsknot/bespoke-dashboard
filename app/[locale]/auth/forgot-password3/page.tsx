@@ -1,4 +1,5 @@
 import { Link } from '@/i18n/routing';
+import { brandConfig } from "@/lib/brand";
 import ForgotPass from "@/components/partials/auth/forgot-pass";
 import Logo from "@/components/logo";
 

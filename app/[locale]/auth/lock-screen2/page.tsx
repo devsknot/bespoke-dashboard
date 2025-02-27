@@ -2,7 +2,7 @@ import { Link } from '@/i18n/routing';
 import Lock from "@/components/partials/auth/lock";
 import Image from "next/image";
 import Logo from "@/components/logo";
-import { brandConfig } from '@/config/brand';
+import { brandConfig } from "@/lib/brand";
 
 const LockScreen2 = () => {
   return (

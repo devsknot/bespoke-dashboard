@@ -3,7 +3,7 @@ import ForgotPass from "@/components/partials/auth/forgot-pass";
 import Image from "next/image";
 import Copyright from "@/components/partials/auth/copyright";
 import Logo from "@/components/logo";
-import brandConfig from "@/config/brand";
+import { brandConfig } from "@/lib/brand";
 
 const ForgotPass2 = () => {
   return (

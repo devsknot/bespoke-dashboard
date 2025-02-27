@@ -29,8 +29,8 @@ const UnderMaintenance = ({ params: { locale } }: { params: { locale: string } }
             We are under maintenance.
           </h4>
           <p className="font-normal text-base text-default-500 ">
-            We're making the system more awesome. <br />
-            We'll be back shortly.
+            We&apos;re making the system more awesome. <br />
+            We&apos;ll be back shortly.
           </p>
         </div>
       </div>

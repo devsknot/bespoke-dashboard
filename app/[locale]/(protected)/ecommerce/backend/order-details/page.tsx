@@ -13,6 +13,8 @@ import TotalTable from "./totaltable";
 import Logo from "@/components/logo";
 import { Icon } from "@/components/ui/icon";
 import { Button } from "@/components/ui/button";
+import { useTranslations } from "next-intl";
+import { brandConfig } from "@/lib/brand";
 
 const OrderDetails = () => {
   return (

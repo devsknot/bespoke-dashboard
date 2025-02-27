@@ -3,7 +3,7 @@ import RegForm from "@/components/partials/auth/reg-form";
 import Social from "@/components/partials/auth/social";
 import Image from "next/image";
 import Logo from "@/components/logo";
-import brandConfig from '@/config/brand';
+import { brandConfig } from "@/lib/brand";
 
 // image import
 

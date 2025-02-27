@@ -2,6 +2,8 @@ import { Link } from '@/i18n/routing';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Icon } from "@/components/ui/icon";
 import React from "react";
+import { useTranslations } from "next-intl";
+import { brandConfig } from "@/lib/brand";
 
 type Props = {};
 

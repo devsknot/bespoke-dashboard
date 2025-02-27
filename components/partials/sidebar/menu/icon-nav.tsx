@@ -22,7 +22,6 @@ interface IconNavProps {
 
 const IconNav = ({ menuList }: IconNavProps) => {
     const [config, setConfig] = useConfig();
-    const { logo } = brandConfig;
 
     return (
         <div className=' h-full bg-sidebar  border-r border-default-200 dark:border-secondary border-dashed w-[72px]'>

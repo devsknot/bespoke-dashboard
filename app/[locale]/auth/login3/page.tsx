@@ -1,5 +1,6 @@
 import { Link } from '@/i18n/routing';
 import Social from "@/components/partials/auth/social";
+import { brandConfig } from "@/lib/brand";
 import LoginForm from "@/components/partials/auth//login-form";
 import Image from "next/image";
 import Logo from "@/components/logo";

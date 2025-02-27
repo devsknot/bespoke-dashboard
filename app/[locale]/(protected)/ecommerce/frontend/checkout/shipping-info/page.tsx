@@ -26,6 +26,8 @@ import {
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Link } from '@/i18n/routing';
+import { useTranslations } from "next-intl";
+import { brandConfig } from "@/lib/brand";
 
 const page = () => {
   return (
