@@ -3,14 +3,15 @@ import { Button } from "@/components/ui/button";
 import { Icon } from "@/components/ui/icon";
 import Image from "next/image";
 import { Link } from '@/i18n/routing';
+import { brandConfig } from '@/lib/brand';
 
-const Page404 = () => {
+const Page404 = ({ params: { locale } }: { params: { locale: string } }) => {
   return (
     <div className="min-h-screen">
       <div className="absolute left-0 top-0 w-full">
         <div className="flex flex-wrap justify-between items-center py-6 container">
           <div>
-            <Link href="/">
+            <Link href={brandConfig.mainRoute}>
               <Logo />
             </Link>
           </div>
@@ -25,12 +26,17 @@ const Page404 = () => {
         <div className="flex justify-center flex-wrap items-center min-h-screen flex-col text-center">
           <Image height={500} width={500} src="/images/all-img/404-2.svg" alt="" />
           <h4 className="text-3xl font-medium text-default-900  mb-2">
-            We are under maintenance.
+            Page not found
           </h4>
           <p className="font-normal text-base text-default-500 ">
-            We’re making the system more awesome. <br />
-            We’ll be back shortly.
+            The page you are looking for doesn't exist or has been moved. <br />
+            Please go back to the home page.
           </p>
+          <div className="mt-4">
+            <Button asChild>
+              <Link href={brandConfig.mainRoute}>Back to Home</Link>
+            </Button>
+          </div>
         </div>
       </div>
       <div className="fixed bottom-0 w-full">

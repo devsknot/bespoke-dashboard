@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 import { ScrollArea } from "@/components/ui/scroll-area";
-import DashCodeLogo from '@/components/dascode-logo';
+import BespokeLogoLegacy from '@/components/dascode-logo';
 import { Group, Submenu } from '@/lib/menus';
 import { Button } from '@/components/ui/button';
 import { Icon } from '@/components/ui/icon';
@@ -14,20 +14,20 @@ import {
 import { Link } from '@/i18n/routing';
 import { cn } from '@/lib/utils';
 import { useConfig } from '@/hooks/use-config';
+import { brandConfig } from '@/lib/brand';
 
 interface IconNavProps {
     menuList: Group[]
-
 }
+
 const IconNav = ({ menuList }: IconNavProps) => {
-
     const [config, setConfig] = useConfig();
-
+    const { logo } = brandConfig;
 
     return (
         <div className=' h-full bg-sidebar  border-r border-default-200 dark:border-secondary border-dashed w-[72px]'>
             <div className="text-center py-5">
-                <DashCodeLogo className="  text-default-900 h-8 w-8 [&>path:nth-child(3)]:text-background [&>path:nth-child(2)]:text-background mx-auto" />
+                <BespokeLogoLegacy className="  text-default-900 h-8 w-8 [&>path:nth-child(3)]:text-background [&>path:nth-child(2)]:text-background mx-auto" />
             </div>
             <ScrollArea className="[&>div>div[style]]:!block h-full">
                 <nav className="mt-8 h-full w-full ">

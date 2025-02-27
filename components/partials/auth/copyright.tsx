@@ -1,8 +1,8 @@
-
+import { brandConfig } from '@/lib/brand';
 
 const Copyright = () => {
     const currentYear = new Date().getFullYear();
-  return <>Copyright {currentYear}, Dashcode All Rights Reserved.</>;
+  return <>{brandConfig.copyrightText(currentYear)}</>;
 };
 
 export default Copyright;

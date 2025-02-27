@@ -2,6 +2,7 @@
 import { useState } from "react"
 import Leaflet from "leaflet"
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet"
+import { brandConfig } from "@/lib/brand";
 
 Leaflet.Icon.Default.imagePath = "../node_modules/leaflet"
 Leaflet.Icon.Default.mergeOptions({
@@ -35,7 +36,7 @@ const PopupMarkerMap = ({ height = 350 }) => {
             />
             <Marker position={position}>
                 <Popup>
-                    <span className="text-gray-900 text-lg font-medium">Hello Dashcode!</span>
+                    <span className="text-gray-900 text-lg font-medium">Hello {brandConfig.name}!</span>
                 </Popup>
             </Marker>
         </MapContainer>

@@ -1,6 +1,6 @@
 import createMiddleware from 'next-intl/middleware';
 import {NextRequest, NextResponse} from 'next/server';
-import {locales} from '@/config';
+import { brandConfig } from '@/lib/brand';
 
 export default async function middleware(request: NextRequest) {
   
@@ -8,18 +8,18 @@ export default async function middleware(request: NextRequest) {
 
 
   // Step 1: Use the incoming request (example)
-  const defaultLocale = request.headers.get('dashcode-locale') || 'en';
+  const defaultLocale = request.headers.get(brandConfig.localeHeader) || brandConfig.defaultLocale;
  
   // Step 2: Create and call the next-intl middleware (example)
   const handleI18nRouting = createMiddleware({
-    locales,
+    locales: brandConfig.locales,
     defaultLocale
     
   });
   const response = handleI18nRouting(request);
  
   // Step 3: Alter the response (example)
-  response.headers.set('dashcode-locale', defaultLocale);
+  response.headers.set(brandConfig.localeHeader, defaultLocale);
 
 
  

@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import "./theme.css"
+import "./theme.css";
+import "./bespoke-styles.css";
 import { ThemeProvider } from "@/providers/theme-provider";
 import MountedProvider from "@/providers/mounted.provider";
 import { Toaster } from '@/components/ui/toaster'
@@ -13,10 +14,11 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import DirectionProvider from "@/providers/direction-provider";
 import AuthProvider from "@/providers/auth.provider";
+import { brandConfig } from "@/lib/brand";
 
 export const metadata: Metadata = {
-  title: "Dashcode admin Template",
-  description: "created by codeshaper",
+  title: brandConfig.metaTitle,
+  description: brandConfig.metaDescription,
 };
 
 export default async function RootLayout({
@@ -31,7 +33,7 @@ export default async function RootLayout({
   const direction = getLangDir(locale);
   return (
     <html lang={locale} dir={direction}>
-      <body className={`${inter.className} dashcode-app`}>
+      <body className={`${inter.className} ${brandConfig.appClass}`}>
         <NextIntlClientProvider messages={messages} locale={locale}>
           <AuthProvider>
             <ThemeProvider attribute="class"

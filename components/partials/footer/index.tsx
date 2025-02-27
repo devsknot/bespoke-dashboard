@@ -4,24 +4,20 @@ import { Link } from "@/components/navigation"
 import Image from 'next/image'
 import { Icon } from "@/components/ui/icon";
 import { auth } from '@/lib/auth'
+import { brandConfig } from '@/lib/brand'
 
-const DashCodeFooter = async () => {
+const BrandFooter = async () => {
     const session = await auth()
+    const currentYear = new Date().getFullYear()
+    
     return (
         <FooterContent>
-            <div className=' md:flex  justify-between text-default-600 hidden'>
+            <div className=' md:flex justify-between text-default-600 hidden'>
                 <div className="text-center ltr:md:text-start rtl:md:text-right text-sm">
-                    COPYRIGHT &copy; {new Date().getFullYear()} DashCode, All rights Reserved
+                    {brandConfig.copyrightText(currentYear)}
                 </div>
                 <div className="ltr:md:text-right rtl:md:text-end text-center text-sm">
-                    Hand-crafted & Made by{" "}
-                    <a
-                        href="https://codeshaper.net"
-                        target="_blank"
-                        className="text-primary font-semibold"
-                    >
-                        Codeshaper
-                    </a>
+                    Hand-crafted & Made with care
                 </div>
             </div>
             <div className='flex md:hidden justify-around items-center'>
@@ -81,4 +77,4 @@ const DashCodeFooter = async () => {
     )
 }
 
-export default DashCodeFooter
+export default BrandFooter

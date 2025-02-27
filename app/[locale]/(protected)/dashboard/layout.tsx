@@ -1,14 +1,15 @@
-import PageTitle from "@/components/page-title";
 import { Metadata } from "next";
+import { brandConfig } from '@/lib/brand';
 
 export const metadata: Metadata = {
-  title: "Dashcode Next Js",
-  description: "Dashcode is a popular dashboard template.",
-};
-const Layout = ({ children }: { children: React.ReactNode }) => {
-  return <>
-    <PageTitle className="mb-6" />
-    {children}</>;
+  title: brandConfig.metaTitle,
+  description: brandConfig.metaDescription,
 };
 
-export default Layout;
+export default function Layout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return <>{children}</>;
+}

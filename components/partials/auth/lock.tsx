@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useForm, SubmitHandler } from "react-hook-form";
+import { brandConfig } from "@/lib/brand";
 
 type Inputs = {
   example: string;
@@ -25,7 +26,7 @@ const LockScreen = () => {
         <Label htmlFor="email">Email</Label>
         <Input
           id="email"
-          defaultValue="dashcode@gmail.com"
+          defaultValue={brandConfig.email}
           {...register("example")}
           className="h-[48px] text-sm text-default-900 "
         />

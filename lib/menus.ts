@@ -1,4 +1,4 @@
-
+import { brandConfig } from './brand';
 
 export type SubChildren = {
   href: string;
@@ -6,6 +6,7 @@ export type SubChildren = {
   active: boolean;
   children?: SubChildren[];
 };
+
 export type Submenu = {
   href: string;
   label: string;
@@ -31,7 +32,6 @@ export type Group = {
 };
 
 export function getMenuList(pathname: string, t: any): Group[] {
-
   return [
     {
       groupLabel: t("dashboard"),
@@ -39,43 +39,43 @@ export function getMenuList(pathname: string, t: any): Group[] {
       menus: [
         {
           id: "dashboard",
-          href: "/dashboard/analytics",
+          href: brandConfig.mainRoute,
           label: t("dashboard"),
-          active: pathname.includes("/dashboard"),
+          active: pathname.includes(brandConfig.mainRoute),
           icon: "heroicons-outline:home",
           submenus: [
             {
-              href: "/dashboard/analytics",
+              href: brandConfig.analyticsRoute,
               label: t("analytics"),
-              active: pathname === "/dashboard/analytics",
+              active: pathname === brandConfig.analyticsRoute,
               icon: "heroicons:arrow-trending-up",
               children: [],
             },
             {
-              href: "/dashboard/dash-ecom",
+              href: `${brandConfig.mainRoute}/dash-ecom`,
               label: t("ecommerce"),
-              active: pathname === "/dashboard/dash-ecom",
+              active: pathname === `${brandConfig.mainRoute}/dash-ecom`,
               icon: "heroicons:shopping-cart",
               children: [],
             },
             {
-              href: "/dashboard/project",
+              href: `${brandConfig.mainRoute}/project`,
               label: t("project"),
-              active: pathname === "/dashboard/project",
+              active: pathname === `${brandConfig.mainRoute}/project`,
               icon: "heroicons:document",
               children: [],
             },
             {
-              href: "/dashboard/crm",
+              href: `${brandConfig.mainRoute}/crm`,
               label: t("crm"),
-              active: pathname === "/dashboard/crm",
+              active: pathname === `${brandConfig.mainRoute}/crm`,
               icon: "heroicons:share",
               children: [],
             },
             {
-              href: "/dashboard/banking",
+              href: `${brandConfig.mainRoute}/banking`,
               label: t("banking"),
-              active: pathname === "/dashboard/banking",
+              active: pathname === `${brandConfig.mainRoute}/banking`,
               icon: "heroicons:credit-card",
               children: [],
             },
@@ -129,7 +129,7 @@ export function getMenuList(pathname: string, t: any): Group[] {
           id: "calendar",
           href: "/app/calendar",
           label: t("calendar"),
-          active:pathname.includes("/app/calendar"),
+          active: pathname.includes("/app/calendar"),
           icon: "heroicons-outline:calendar",
           submenus: [],
         },
@@ -137,7 +137,7 @@ export function getMenuList(pathname: string, t: any): Group[] {
           id: "todo",
           href: "/app/todo",
           label: t("todo"),
-          active:pathname.includes("/app/todo"),
+          active: pathname.includes("/app/todo"),
           icon: "heroicons-outline:clipboard-check",
           submenus: [],
         },
@@ -704,7 +704,7 @@ export function getMenuList(pathname: string, t: any): Group[] {
               label: t("inputFile"),
               active: pathname === "/forms/input-file",
               icon: "",
-              children: []
+              children: [],
             },
             {
               href: "/forms/form-validation",
@@ -755,7 +755,6 @@ export function getMenuList(pathname: string, t: any): Group[] {
               icon: "",
               children: [],
             },
-
             {
               href: "/forms/combobox",
               label: t("combobox"),
@@ -905,7 +904,6 @@ export function getMenuList(pathname: string, t: any): Group[] {
                   ),
                   children: [],
                 },
-
                 {
                   href: "/charts/appex-charts/charts-appex-funnel",
                   label: t("funnelCharts"),
@@ -1171,10 +1169,10 @@ export function getMenuList(pathname: string, t: any): Group[] {
                   children: [],
                 },
               ],
-            }
-          ]
-        }
-      ]
+            },
+          ],
+        },
+      ],
     },
     {
       groupLabel: "",
@@ -1221,6 +1219,7 @@ export function getMenuList(pathname: string, t: any): Group[] {
     },
   ];
 }
+
 export function getHorizontalMenuList(pathname: string, t: any): Group[] {
   return [
     {
@@ -1229,43 +1228,43 @@ export function getHorizontalMenuList(pathname: string, t: any): Group[] {
       menus: [
         {
           id: "dashboard",
-          href: "/dashboard/analytics",
+          href: brandConfig.mainRoute,
           label: t("dashboard"),
-          active: pathname.includes("/dashboard"),
+          active: pathname.includes(brandConfig.mainRoute),
           icon: "heroicons-outline:home",
           submenus: [
             {
-              href: "/dashboard/analytics",
+              href: brandConfig.analyticsRoute,
               label: t("analytics"),
-              active: pathname === "/dashboard/analytics",
+              active: pathname === brandConfig.analyticsRoute,
               icon: "heroicons:arrow-trending-up",
               children: [],
             },
             {
-              href: "/dashboard/dash-ecom",
+              href: `${brandConfig.mainRoute}/dash-ecom`,
               label: t("ecommerce"),
-              active: pathname === "/dashboard/dash-ecom",
+              active: pathname === `${brandConfig.mainRoute}/dash-ecom`,
               icon: "heroicons:shopping-cart",
               children: [],
             },
             {
-              href: "/dashboard/project",
+              href: `${brandConfig.mainRoute}/project`,
               label: t("project"),
-              active: pathname === "/dashboard/project",
+              active: pathname === `${brandConfig.mainRoute}/project`,
               icon: "heroicons:document",
               children: [],
             },
             {
-              href: "/dashboard/crm",
+              href: `${brandConfig.mainRoute}/crm`,
               label: t("crm"),
-              active: pathname === "/dashboard/crm",
+              active: pathname === `${brandConfig.mainRoute}/crm`,
               icon: "heroicons:share",
               children: [],
             },
             {
-              href: "/dashboard/banking",
+              href: `${brandConfig.mainRoute}/banking`,
               label: t("banking"),
-              active: pathname === "/dashboard/banking",
+              active: pathname === `${brandConfig.mainRoute}/banking`,
               icon: "heroicons:credit-card",
               children: [],
             },
@@ -1273,7 +1272,6 @@ export function getHorizontalMenuList(pathname: string, t: any): Group[] {
         },
       ],
     },
-
     {
       groupLabel: t("apps"),
       id: "app",
@@ -1871,7 +1869,7 @@ export function getHorizontalMenuList(pathname: string, t: any): Group[] {
           label: t("forms"),
           active: pathname.includes("/forms"),
           icon: "heroicons-outline:clipboard-list",
-         submenus: [
+          submenus: [
             {
               href: "/forms/input",
               label: t("input"),
@@ -1963,7 +1961,6 @@ export function getHorizontalMenuList(pathname: string, t: any): Group[] {
               icon: "",
               children: [],
             },
-
             {
               href: "/forms/combobox",
               label: t("combobox"),
@@ -2084,7 +2081,6 @@ export function getHorizontalMenuList(pathname: string, t: any): Group[] {
                   ),
                   children: [],
                 },
-
                 {
                   href: "/charts/appex-charts/charts-appex-funnel",
                   label: t("funnelCharts"),
@@ -2391,5 +2387,3 @@ export function getHorizontalMenuList(pathname: string, t: any): Group[] {
     },
   ];
 }
-
-

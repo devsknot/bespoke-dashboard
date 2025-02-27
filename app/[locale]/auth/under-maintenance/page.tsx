@@ -3,14 +3,15 @@ import { Button } from "@/components/ui/button";
 import { Icon } from "@/components/ui/icon";
 import Image from "next/image";
 import { Link } from '@/i18n/routing';
+import { brandConfig } from '@/lib/brand';
 
-const UnderMaintenance = () => {
+const UnderMaintenance = ({ params: { locale } }: { params: { locale: string } }) => {
   return (
     <div className="min-h-screen">
       <div className="absolute left-0 top-0 w-full">
         <div className="flex flex-wrap justify-between items-center py-6 container">
           <div>
-            <Link href="/">
+            <Link href={brandConfig.mainRoute}>
               <Logo />
             </Link>
           </div>
@@ -28,8 +29,8 @@ const UnderMaintenance = () => {
             We are under maintenance.
           </h4>
           <p className="font-normal text-base text-default-500 ">
-            We’re making the system more awesome. <br />
-            We’ll be back shortly.
+            We're making the system more awesome. <br />
+            We'll be back shortly.
           </p>
         </div>
       </div>
@@ -40,7 +41,7 @@ const UnderMaintenance = () => {
               <ul className="flex md:justify-start justify-center gap-3">
                 <li>
                   <Link
-                    href="#"
+                    href={brandConfig.socialLinks.facebook}
                     className="border-default inline-block border border-solid  rounded-full hover:bg-default hover:text-default-50 duration-300 transition-all p-2"
                   >
                     <Icon className="h-4 w-4" icon="icomoon-free:facebook" />
@@ -48,7 +49,7 @@ const UnderMaintenance = () => {
                 </li>
                 <li>
                   <Link
-                    href="#"
+                    href={brandConfig.socialLinks.twitter}
                     className="border-default inline-block border border-solid  rounded-full hover:bg-default hover:text-default-50 duration-300 transition-all p-2"
                   >
                     <Icon className="h-4 w-4" icon="icomoon-free:twitter" />
@@ -56,7 +57,7 @@ const UnderMaintenance = () => {
                 </li>
                 <li>
                   <Link
-                    href="#"
+                    href={brandConfig.socialLinks.linkedin}
                     className="border-default inline-block border border-solid  rounded-full hover:bg-default hover:text-default-50 duration-300 transition-all p-2"
                   >
                     <Icon className="h-4 w-4" icon="icomoon-free:linkedin2" />
@@ -92,7 +93,7 @@ const UnderMaintenance = () => {
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href={`mailto:${brandConfig.supportEmail}`}
                     className="text-default-500 text-sm transition duration-150 hover:text-default-900"
                   >
                     Email us

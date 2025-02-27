@@ -14,6 +14,7 @@ import { Loader2 } from 'lucide-react';
 import { loginUser } from '@/action/auth-action';
 import { toast } from "sonner"
 import { useRouter } from '@/components/navigation';
+import { brandConfig } from '@/lib/brand';
 
 const schema = z.object({
   email: z.string().email({ message: "Your email is invalid." }),
@@ -41,7 +42,7 @@ const LoginForm = () => {
     resolver: zodResolver(schema),
     mode: "all",
     defaultValues: {
-      email: "dashcode@codeshaper.net",
+      email: brandConfig.email,
       password: "password",
     },
   });
@@ -140,7 +141,7 @@ const LoginForm = () => {
       </div>
       <Button fullWidth disabled={isPending}>
         {isPending && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-        {isPending ? "Loading..." : "Sign In"}
+        {isPending ? "Loading..." : brandConfig.signInButtonText}
       </Button>
     </form>
   );

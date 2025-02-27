@@ -8,7 +8,7 @@ const VMap = ({ height = 350 }: { height?: number }) => {
     <div className={`w-full h-[${height}px]`}>
       <VectorMap
         {...world}
-        className="h-full w-full object-cover dashcode-app-vmap"
+        className="h-full w-full object-cover bespoke-app-vmap"
       />
     </div>
   );

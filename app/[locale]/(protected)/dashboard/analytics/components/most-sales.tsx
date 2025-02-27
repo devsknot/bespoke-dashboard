@@ -111,7 +111,7 @@ const MostSales = () => {
             </ul>
           </div>
           <div className="flex-1 ">
-            <VectorMap {...world} className="dashcode-app-vmap" />
+            <VectorMap {...world} className="bespoke-app-vmap" />
           </div>
         </div>
       </CardContent>

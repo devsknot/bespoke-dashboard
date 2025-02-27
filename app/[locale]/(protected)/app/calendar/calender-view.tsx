@@ -199,7 +199,7 @@ const t = useTranslations("CalendarApp")
         </Card>
 
         <Card className="col-span-12 lg:col-span-8 2xl:col-span-9  pt-5">
-          <CardContent className="dashcode-app-calendar">
+          <CardContent className="bespoke-app-calendar">
             <FullCalendar
               plugins={[
                 dayGridPlugin,

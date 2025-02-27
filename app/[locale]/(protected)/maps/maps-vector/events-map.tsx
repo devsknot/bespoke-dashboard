@@ -42,7 +42,7 @@ const EventVMap = ({ height = 350 }: { height?: number }) => {
         <VectorMap
           {...world}
           layerProps={layerProps}
-          className="h-full w-full object-cover dashcode-app-codeVmapInfo"
+          className="h-full w-full object-cover bespoke-app-codeVmapInfo"
         />
       </div>
       <div className="text-center">

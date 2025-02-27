@@ -1,8 +1,10 @@
+import { brandConfig } from "./brand";
+
 // user data 
 const users = [
   {
-    name: "dashcode",
-    email: "dashcode@codeshaper.net",
+    name: brandConfig.shortName,
+    email: brandConfig.email,
     password: "password",
     image: '/images/users/user-1.jpg',
   },

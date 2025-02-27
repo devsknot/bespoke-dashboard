@@ -11,9 +11,10 @@ import { SheetMenu } from '@/components/partials/sidebar/menu/sheet-menu'
 import HorizontalMenu from "./horizontal-menu"
 import LocalSwitcher from './locale-switcher'
 import HeaderLogo from "./header-logo"
+import { brandConfig } from '@/lib/brand'
 
 
-const DashCodeHeader = async () => {
+const BrandHeader = async () => {
 
 
     return (
@@ -39,4 +40,4 @@ const DashCodeHeader = async () => {
     )
 }
 
-export default DashCodeHeader
+export default BrandHeader

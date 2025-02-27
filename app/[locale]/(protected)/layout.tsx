@@ -1,30 +1,30 @@
 import LayoutProvider from "@/providers/layout.provider";
 import LayoutContentProvider from "@/providers/content.provider";
-import DashCodeSidebar from '@/components/partials/sidebar'
-import DashCodeFooter from '@/components/partials/footer'
+import BrandSidebar from '@/components/partials/sidebar'
+import BrandFooter from '@/components/partials/footer'
 import ThemeCustomize from '@/components/partials/customizer'
-import DashCodeHeader from '@/components/partials/header'
+import BrandHeader from '@/components/partials/header'
 import { auth } from "@/lib/auth";
 import { redirect } from "@/components/navigation";
+import { brandConfig } from "@/lib/brand";
+
 const layout = async ({ children }: { children: React.ReactNode }) => {
     const session = await auth();
 
     if (!session) {
-        redirect("/");
+        redirect(brandConfig.mainRoute);
     }
     return (
         <LayoutProvider >
             <ThemeCustomize />
-            <DashCodeHeader />
-            <DashCodeSidebar />
+            <BrandHeader />
+            <BrandSidebar />
             <LayoutContentProvider>
                 {children}
+                <BrandFooter />
             </LayoutContentProvider>
-            <DashCodeFooter />
         </LayoutProvider>
-    )
-
-
+    );
 };
 
 export default layout;

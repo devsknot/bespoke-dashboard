@@ -17,7 +17,7 @@ const LayerLinks = ({ height = 350 }: { height?: number }) => {
       <VectorMap
         {...world}
         layerProps={{ onClick }}
-        className="h-full w-full object-cover dashcode-app-codeVmapSuccess"
+        className="h-full w-full object-cover bespoke-app-codeVmapSuccess"
       />
     </div>
   );

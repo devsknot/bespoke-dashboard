@@ -39,10 +39,10 @@ s lg:w-1/2"
               </div>
               <div className="text-center 2xl:mb-10 mb-5">
                 <h4 className="font-medium text-2xl text-default-900  mb-3">
-                  Sign up
+                  {brandConfig.signUpTitle}
                 </h4>
                 <div className="text-default-500  text-base">
-                  Create an account to start using Dashcode
+                  {brandConfig.signUpText}
                 </div>
               </div>
               <RegForm />

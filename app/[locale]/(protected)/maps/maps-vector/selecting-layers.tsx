@@ -25,7 +25,7 @@ const SelectingLayers = ({ height = 250 }: { height?: number }) => {
         <VectorMap
           {...world}
           layerProps={{ onClick }}
-          className="h-full w-full object-cover dashcode-app-codeVmapWarning"
+          className="h-full w-full object-cover bespoke-app-codeVmapWarning"
         />
       </div>
       <div className="text-center">

@@ -1,10 +1,10 @@
-
 "use client";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useForm, SubmitHandler } from "react-hook-form";
+import { brandConfig } from '@/lib/brand';
 
 type Inputs = {
   example: string;
@@ -36,7 +36,7 @@ const RegForm = () => {
         <Label htmlFor="email">Email</Label>
         <Input
           id="email"
-          placeholder="dashcode@gmail.com"
+          placeholder={brandConfig.email}
           {...register("example")}
           size="lg"
         />
@@ -46,7 +46,7 @@ const RegForm = () => {
         <Input
           id="password"
           type="password"
-          placeholder="dashcode"
+          placeholder={brandConfig.password}
           {...register("exampleRequired", { required: true })}
           size="lg"
         />
@@ -64,7 +64,7 @@ const RegForm = () => {
       </div>
 
       <Button type="submit" fullWidth>
-        Create An Account
+        {brandConfig.signUpButtonText}
       </Button>
     </form>
   );

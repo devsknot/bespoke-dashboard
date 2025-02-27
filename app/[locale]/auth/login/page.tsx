@@ -4,6 +4,8 @@ import Image from "next/image";
 import Social from "@/components/partials/auth/social";
 import Copyright from "@/components/partials/auth/copyright";
 import Logo from "@/components/partials/auth/logo";
+import { brandConfig } from '@/lib/brand';
+
 const Login = ({ params: { locale } }: { params: { locale: string } }) => {
   return (
     <>
@@ -14,7 +16,7 @@ const Login = ({ params: { locale } }: { params: { locale: string } }) => {
  relative z-[1] bg-default-50"
           >
             <div className="max-w-[520px] pt-20 ps-20 ">
-              <Link href="/" className="mb-6 inline-block">
+              <Link href={brandConfig.mainRoute} className="mb-6 inline-block">
                 <Logo />
               </Link>
               <h4>
@@ -38,14 +40,14 @@ const Login = ({ params: { locale } }: { params: { locale: string } }) => {
             <div className=" h-full flex flex-col  dark:bg-default-100 bg-white">
               <div className="max-w-[524px] md:px-[42px] md:py-[44px] p-7  mx-auto w-full text-2xl text-default-900  mb-3 h-full flex flex-col justify-center">
                 <div className="flex justify-center items-center text-center mb-6 lg:hidden ">
-                  <Link href="/">
+                  <Link href={brandConfig.mainRoute}>
                     <Logo />
                   </Link>
                 </div>
                 <div className="text-center 2xl:mb-10 mb-4">
                   <h4 className="font-medium">Sign in</h4>
                   <div className="text-default-500 text-base">
-                    Sign in to your account to start using Dashcode
+                    Sign in to your account to start using {brandConfig.name}
                   </div>
                 </div>
                 <LoginForm />

@@ -508,7 +508,7 @@ const Typography = ({ }: Props) => {
                   Accusamus laudantium omnis fugit ducimus nulla libero
                   temporibus corrupti non voluptatem harum?
                   <span className="text-sm text-default-400 block mt-3">
-                    Dashcode Admin Template
+                    {brandConfig.name} Admin Template
                   </span>
                 </blockquote>
                 <blockquote className=" italic text-xl border-primary-500 text-right text-default-900 ">
@@ -516,7 +516,7 @@ const Typography = ({ }: Props) => {
                   Accusamus laudantium omnis fugit ducimus nulla libero
                   temporibus corrupti non voluptatem harum?
                   <span className="text-sm text-default-400 block mt-3">
-                    Dashcode Admin Template
+                    {brandConfig.name} Admin Template
                   </span>
                 </blockquote>
                 <blockquote className=" italic text-xl border-success-500 text-center text-default-900 ">
@@ -524,7 +524,7 @@ const Typography = ({ }: Props) => {
                   Accusamus laudantium omnis fugit ducimus nulla libero
                   temporibus corrupti non voluptatem harum?
                   <span className="text-sm text-default-400 block mt-3">
-                    Dashcode Admin Template
+                    {brandConfig.name} Admin Template
                   </span>
                 </blockquote>
               </CardContent>

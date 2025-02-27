@@ -4,6 +4,8 @@ import React, { useState } from "react";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { brandConfig } from '@/lib/brand';
+
 type Inputs = {
   example: string;
   exampleRequired: string;
@@ -25,14 +27,14 @@ const ForgotPass = () => {
         <Label htmlFor="email">Email</Label>
         <Input
           id="email"
-          defaultValue="dashcode@gmail.com"
+          defaultValue={brandConfig.email}
           {...register("example")}
           className="h-[48px] text-sm text-default-900 "
         />
       </div>
 
       <Button type="submit" fullWidth>
-        Send recovery email
+        {brandConfig.resetPasswordButtonText}
       </Button>
     </form>
   );
