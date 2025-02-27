@@ -4,6 +4,7 @@ const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 import { colors } from "@/lib/colors";
 import { useTheme } from "next-themes";
 import { useConfig } from "@/hooks/use-config";
+import { useTranslations } from "next-intl";
 
 interface OverviewChartProps {
   height?: number;
@@ -15,12 +16,22 @@ const OverviewChart = ({
   height = 373,
   series = [44, 55, 67, 83],
   chartType = "radialBar",
-  labels = ["A", "B", "C", "D"]
-
+  labels
 }: OverviewChartProps) => {
   const [config] = useConfig();
   const { theme: mode } = useTheme();
+  const t = useTranslations("AnalyticsDashboard");
 
+  // Usar traducciones para los labels
+  const defaultLabels = [
+    t("overview_chart_label_a"),
+    t("overview_chart_label_b"),
+    t("overview_chart_label_c"),
+    t("overview_chart_label_d")
+  ];
+
+  // Usar los labels proporcionados o los predeterminados
+  const chartLabels = labels || defaultLabels;
 
   const options: any = {
     chart: {
@@ -46,7 +57,7 @@ const OverviewChart = ({
           },
           total: {
             show: true,
-            label: "Total",
+            label: t("overview_chart_total"),
             color: mode === 'light' ? colors["default-600"] : colors["default-300"],
             formatter: function (w: any) {
               return 249;
@@ -61,7 +72,7 @@ const OverviewChart = ({
       colors.success,
       colors.warning
     ],
-    labels: labels,
+    labels: chartLabels,
     tooltip: {
       theme: mode === "dark" ? "dark" : "light",
     },

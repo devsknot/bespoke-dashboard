@@ -4,17 +4,19 @@ const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 import { colors } from "@/lib/colors";
 import { useTheme } from "next-themes";
 import { getLabel, getYAxisConfig } from "@/lib/appex-chart-options";
+import { useTranslations } from "next-intl";
 
 const VisitorsChart = ({ height = 350 }) => {
   const { theme: mode } = useTheme();
+  const t = useTranslations("EcommerceDashboard");
 
   const series = [
     {
-      name: "Male",
+      name: t("visitors_chart_male"),
       data: [41, 64, 81, 60, 42, 42, 33, 23],
     },
     {
-      name: "Female",
+      name: t("visitors_chart_female"),
       data: [65, 46, 42, 25, 58, 63, 76, 43],
     },
   ];

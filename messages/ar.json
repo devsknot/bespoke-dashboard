@@ -20,11 +20,28 @@
     "invested_amount": "المبلغ المستثمر",
     "last_28_days": "آخر 28 يوما",
     "last_months": "أشهر الماضية",
-    "last_year": "العام الماضي"
+    "last_year": "العام الماضي",
+    "net_profit": "صافي الربح",
+    "revenue": "إيرادات",
+    "free_cash_flow": "التدفق النقدي الحر",
+    "overview_chart_label_a": "أ",
+    "overview_chart_label_b": "ب",
+    "overview_chart_label_c": "ج",
+    "overview_chart_label_d": "د",
+    "overview_chart_total": "المجموع"
   },
   "BankingDashboard": {
     "widget_title": "مساء الخير",
-    "widget_desc": "مرحبًا بك في داشكود",
+    "widget_desc": "إليك ما يحدث مع حسابك اليوم",
+    "widget_badge": "الآن",
+    "total_amount": "المبلغ الإجمالي",
+    "income_chart_title": "الدخل",
+    "expense_chart_title": "المصروفات",
+    "history_chart_title": "التاريخ",
+    "transaction_table_title": "المعاملات",
+    "card_title": "بطاقاتي",
+    "history_chart_earnings": "الأرباح",
+    "history_chart_expenses": "النفقات",
     "current_balance": "الرصيد الحالي",
     "credit": "ائتمان",
     "debit": "مدين",
@@ -36,7 +53,6 @@
     "view_all": "عرض الكل",
     "account": "الحساب",
     "recipient_account_number": "رقم حساب المستلم",
-    "total_amount": "المبلغ",
     "send_money": "إرسال المال",
     "account_receivable": "حساب المدين",
     "account_payable": "حساب الدائن"
@@ -50,7 +66,10 @@
     "deal_distribution_by_stage": "توزيع الصفقات حسب المرحلة",
     "campaigns": "الحملات",
     "trends_calculation": "حساب الاتجاهات",
-    "latest_transactions": "أحدث المعاملات"
+    "latest_transactions": "أحدث المعاملات",
+    "deal_distribution_sales_qualified": "المبيعات المؤهلة",
+    "deal_distribution_meeting": "اجتماع",
+    "deal_distribution_in_negotiation": "في التفاوض"
   },
   "EcommerceDashboard": {
     "widget_title": "مساء الخير",
@@ -74,7 +93,9 @@
     "profit": "الربح",
     "earnings": "الأرباح",
     "statistics": "الإحصائيات",
-    "statistics_graph_desc": "من الأسابيع الماضية"
+    "statistics_graph_desc": "من الأسابيع الماضية",
+    "visitors_chart_male": "ذكر",
+    "visitors_chart_female": "أنثى"
   },
   "ProjectDashboard": {
     "total_task": "إجمالي المهام",

@@ -12,22 +12,11 @@ interface RevenueBarChartProps {
   series?: any[];
   chartColors?: string[]
 }
-const defaultSeries = [{
-  name: "Net Profit",
-  data: [44, 55, 57, 56, 61, 58, 63, 60, 66],
-},
-{
-  name: "Revenue",
-  data: [76, 85, 101, 98, 87, 105, 91, 114, 94],
-},
-{
-  name: "Free Cash Flow",
-  data: [35, 41, 36, 26, 45, 48, 52, 53, 41],
-}]
+
 const RevenueBarChart = ({
   height = 400,
   chartType = "bar",
-  series = defaultSeries,
+  series,
   chartColors = ["#4669FA", "#0CE7FA", "#FA916B"]
 
 }: RevenueBarChartProps) => {
@@ -35,6 +24,24 @@ const RevenueBarChart = ({
   const { isRtl } = config;
   const t = useTranslations("AnalyticsDashboard");
   const { theme: mode } = useTheme();
+  
+  // Usar traducciones para los nombres de las series
+  const defaultSeries = [{
+    name: t("net_profit"),
+    data: [44, 55, 57, 56, 61, 58, 63, 60, 66],
+  },
+  {
+    name: t("revenue"),
+    data: [76, 85, 101, 98, 87, 105, 91, 114, 94],
+  },
+  {
+    name: t("free_cash_flow"),
+    data: [35, 41, 36, 26, 45, 48, 52, 53, 41],
+  }];
+
+  // Usar las series proporcionadas o las predeterminadas
+  const chartSeries = series || defaultSeries;
+
   const options: any = {
     chart: {
       toolbar: {
@@ -163,7 +170,7 @@ const RevenueBarChart = ({
   return (
     <Chart
       options={options}
-      series={series}
+      series={chartSeries}
       type={chartType}
       height={height}
       width={"100%"}

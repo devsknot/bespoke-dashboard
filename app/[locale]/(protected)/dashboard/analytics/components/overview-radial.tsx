@@ -3,6 +3,8 @@
 import { useTheme } from "next-themes";
 import Chart from "react-apexcharts";
 import { colors } from "@/lib/colors";
+import { useTranslations } from "next-intl";
+
 interface OverviewRadialChartProps {
   height?: number;
   series?: number[];
@@ -10,16 +12,18 @@ interface OverviewRadialChartProps {
   labels?: string[];
   chartColor?: string[];
 }
+
 const OverviewRadialChart = ({
   height = 320,
   series = [67],
   chartType = "radialBar",
-  chartColor=["#2563eb"],
+  chartColor = ["#2563eb"],
 }: OverviewRadialChartProps) => {
 
-  const {theme:mode} = useTheme();
+  const { theme: mode } = useTheme();
+  const t = useTranslations("AnalyticsDashboard");
 
-  const options:any = {
+  const options: any = {
     chart: {
       toolbar: {
         show: false,
@@ -40,7 +44,7 @@ const OverviewRadialChart = ({
           },
           total: {
             show: true,
-            label: "Total",
+            label: t("overview_chart_total"),
             color: mode === 'light' ? colors["default-600"] : colors["default-300"],
             formatter: function () {
               return 249;

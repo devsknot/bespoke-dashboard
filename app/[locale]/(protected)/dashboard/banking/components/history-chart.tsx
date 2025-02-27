@@ -9,6 +9,7 @@ import {
   getYAxisConfig,
 } from "@/lib/appex-chart-options";
 import { colors } from "@/lib/colors";
+import { useTranslations } from "next-intl";
 
 interface HistoryChartProps {
   height?: number;
@@ -20,23 +21,25 @@ interface HistoryChartProps {
 
 const HistoryChart = ({
   height = 360,
-  series = [
-    {
-      name: "Earnings",
-      data: [31, 40, 28, 51, 42, 109, 100],
-    },
-    {
-      name: "Expenses",
-      data: [11, 32, 45, 32, 34, 52, 41],
-    }
-  ]
+  series
 }: HistoryChartProps
 
 ) => {
   const [config] = useConfig();
-
   const { theme: mode } = useTheme();
+  const t = useTranslations("BankingDashboard");
 
+  // Usar series proporcionadas o las predeterminadas con traducciones
+  const chartSeries = series || [
+    {
+      name: t("history_chart_earnings"),
+      data: [31, 40, 28, 51, 42, 109, 100],
+    },
+    {
+      name: t("history_chart_expenses"),
+      data: [11, 32, 45, 32, 34, 52, 41],
+    }
+  ];
 
   const options: any = {
     chart: {
@@ -100,7 +103,7 @@ const HistoryChart = ({
   return (
     <Chart
       options={options}
-      series={series}
+      series={chartSeries}
       type="area"
       height={height}
       width={"100%"}

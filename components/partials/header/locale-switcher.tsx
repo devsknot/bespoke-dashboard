@@ -14,6 +14,7 @@ import {
     SelectValue,
 } from "@/components/ui/select"
 import Image from 'next/image';
+import { brandConfig } from '@/lib/brand';
 
 export default function LocalSwitcher() {
     const [isPending, startTransition] = useTransition();
@@ -28,6 +29,8 @@ export default function LocalSwitcher() {
             router.replace(pathname, { locale: nextLocale });
         });
     };
+    
+    // Solo mostramos inglés en el selector
     return (
         <Select onValueChange={onSelectChange} defaultValue={localActive}>
             <SelectTrigger className='w-[94px] border-none read-only:bg-transparent'>
@@ -49,6 +52,8 @@ export default function LocalSwitcher() {
                         <span className='font-medium text-sm text-default-600 dark:text-default-700'>En</span>
                     </div>
                 </SelectItem>
+                {/* Opción de árabe oculta pero mantenida en el código para referencia futura */}
+                {/* 
                 <SelectItem value="ar">
                     <div className='flex items-center gap-1'>
                         <Image
@@ -61,6 +66,7 @@ export default function LocalSwitcher() {
                         <span className='font-medium text-sm text-default-600 dark:text-default-700'>Ar</span>
                     </div>
                 </SelectItem>
+                */}
             </SelectContent>
         </Select>
 

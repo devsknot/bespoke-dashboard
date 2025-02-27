@@ -44,7 +44,7 @@ export const brandConfig = {
   // Configuración de localización
   localeHeader: "bespoke-locale",
   defaultLocale: "en",
-  locales: ["en", "es"],
+  locales: ["en", "ar"],
   
   // Textos para preguntas frecuentes
   faqTexts: {

@@ -5,6 +5,7 @@ import { colors } from "@/lib/colors";
 import { useTheme } from "next-themes";
 import { useConfig } from "@/hooks/use-config";
 import { getGridConfig, getYAxisConfig } from "@/lib/appex-chart-options";
+import { useTranslations } from "next-intl";
 
 interface DealsDistributionChartProps {
   height?: number;
@@ -13,23 +14,30 @@ interface DealsDistributionChartProps {
     data: number[];
   }[];
 }
-const defaultSeries = [
-  {
-    name: "Sales qualified",
-    data: [44, 55, 57, 56, 61, 58, 63, 60, 66],
-  },
-  {
-    name: "Meeting",
-    data: [76, 85, 101, 98, 87, 105, 91, 114, 94],
-  },
-  {
-    name: "In negotiation",
-    data: [35, 41, 36, 26, 45, 48, 52, 53, 41],
-  }
-];
-const DealDistributionsChart = ({ series = defaultSeries, height = 410 }: DealsDistributionChartProps) => {
+
+const DealDistributionsChart = ({ series, height = 410 }: DealsDistributionChartProps) => {
   const [config] = useConfig();
   const { theme: mode } = useTheme();
+  const t = useTranslations("CRMDashboard");
+
+  // Definir series con traducciones
+  const defaultSeries = [
+    {
+      name: t("deal_distribution_sales_qualified"),
+      data: [44, 55, 57, 56, 61, 58, 63, 60, 66],
+    },
+    {
+      name: t("deal_distribution_meeting"),
+      data: [76, 85, 101, 98, 87, 105, 91, 114, 94],
+    },
+    {
+      name: t("deal_distribution_in_negotiation"),
+      data: [35, 41, 36, 26, 45, 48, 52, 53, 41],
+    }
+  ];
+
+  // Usar series proporcionadas o las predeterminadas con traducciones
+  const chartSeries = series || defaultSeries;
 
   const options: any = {
     chart: {
@@ -133,7 +141,7 @@ const DealDistributionsChart = ({ series = defaultSeries, height = 410 }: DealsD
   return (
     <Chart
       options={options}
-      series={series}
+      series={chartSeries}
       type="bar"
       height={height}
       width={"100%"}
