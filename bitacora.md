@@ -82,6 +82,33 @@ export const brandConfig: BrandConfig = {
 - Se ha creado esta bitácora para documentar todos los cambios realizados.
 - Se ha documentado el proceso de actualización y los próximos pasos.
 
+## Corrección de errores para el build de producción
+
+### Fecha: 2025-02-27
+
+Se corrigieron varios errores que impedían que el proyecto se compilara correctamente para producción:
+
+1. **Errores de linting**:
+   - Se corrigieron comillas simples no escapadas en archivos de páginas de error (404, under-maintenance).
+   - Se reemplazaron las comillas simples por `&apos;` para cumplir con las reglas de ESLint.
+
+2. **Errores de importación**:
+   - Se corrigieron rutas de importación incorrectas en varios archivos de autenticación que intentaban importar desde `@/config/brand` en lugar de `@/lib/brand`.
+   - Se añadieron importaciones faltantes de `brandConfig` en múltiples archivos:
+     - `app/[locale]/(protected)/blocks/basic-widget/page.tsx`
+     - `app/[locale]/(protected)/components/typography/page.tsx`
+     - `app/[locale]/(protected)/ecommerce/backend/order-details/page.tsx`
+     - `app/[locale]/(protected)/ecommerce/frontend/checkout/shipping-info/page.tsx`
+     - `app/[locale]/auth/forgot-password3/page.tsx`
+     - `app/[locale]/auth/login2/page.tsx`
+     - `app/[locale]/auth/login3/page.tsx`
+     - `app/[locale]/auth/register3/page.tsx`
+
+3. **Errores de propiedades**:
+   - Se eliminó la desestructuración de una propiedad inexistente (`logo`) en `components/partials/sidebar/menu/icon-nav.tsx`.
+
+Estos cambios permitieron que el proyecto se compilara correctamente para producción, lo que es esencial para el despliegue en Vercel.
+
 ## Guía para Futuras Actualizaciones de Marca
 
 ### Introducción
