@@ -109,6 +109,23 @@ Se corrigieron varios errores que impedían que el proyecto se compilara correct
 
 Estos cambios permitieron que el proyecto se compilara correctamente para producción, lo que es esencial para el despliegue en Vercel.
 
+## Correcciones y Mejoras Adicionales
+
+### 2025-02-27: Corrección de rutas en brandConfig
+- Se corrigieron las rutas definidas en `brandConfig` para que coincidan con la estructura real de carpetas en el proyecto.
+- Se actualizaron las propiedades `mainRoute` y `analyticsRoute` de `/bespoke` a `/dashboard`.
+- Esta corrección resuelve los errores 404 que ocurrían al navegar a través del menú lateral.
+
+```typescript
+// Antes
+mainRoute: "/bespoke",
+analyticsRoute: "/bespoke/analytics",
+
+// Después
+mainRoute: "/dashboard",
+analyticsRoute: "/dashboard/analytics",
+```
+
 ## Guía para Futuras Actualizaciones de Marca
 
 ### Introducción

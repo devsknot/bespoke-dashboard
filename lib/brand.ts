@@ -18,8 +18,8 @@ export const brandConfig = {
   password: "password", // Contraseña por defecto para ejemplos
   
   // Rutas
-  mainRoute: "/bespoke",
-  analyticsRoute: "/bespoke/analytics",
+  mainRoute: "/dashboard",
+  analyticsRoute: "/dashboard/analytics",
   
   // Textos
   welcomeText: "Welcome to BespokeDashboard",
